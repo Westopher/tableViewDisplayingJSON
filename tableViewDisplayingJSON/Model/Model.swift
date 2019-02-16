@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import UIKit
+
+struct DarkSky: Decodable {
+    
+    var currently : String?
+    var daily : String
+    var flags : String
+    var hourly : String
+    var latitude : Float
+    var longitude : Float
+    var minutely : String
+    var offset : Int
+    var timezone : String
+    
+}
