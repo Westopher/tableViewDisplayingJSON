@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RYL-oa-03x">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RYL-oa-03x">
                                 <rect key="frame" x="0.0" y="144" width="375" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="100" id="0X0-z0-3Jy" customClass="countryCell" customModule="tableViewDisplayingJSON" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="123" id="0X0-z0-3Jy" customClass="countryCell" customModule="tableViewDisplayingJSON" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0X0-z0-3Jy" id="AFs-o5-uvb">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="122.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-6t-77Z">
@@ -36,7 +36,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHb-S1-Dqv">
-                                                    <rect key="frame" x="15" y="68" width="53.5" height="21"/>
+                                                    <rect key="frame" x="15" y="91" width="53.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -59,25 +59,25 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="FGd-ER-2IM"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TableView Displaying JSON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tz-36-4Xj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TableView Displaying JSON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-er-1Vn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="80"/>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.76862745099999996" green="0.91372549020000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tz-36-4Xj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6pl-yn-Mvy"/>
-                            <constraint firstItem="6Tz-36-4Xj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6sU-EV-bz0"/>
                             <constraint firstItem="RYL-oa-03x" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="88H-qu-HXB"/>
+                            <constraint firstItem="RYL-oa-03x" firstAttribute="top" secondItem="tLq-er-1Vn" secondAttribute="bottom" id="8Rm-bh-l7B"/>
                             <constraint firstItem="RYL-oa-03x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E1p-y0-Fty"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Tz-36-4Xj" secondAttribute="trailing" id="Sj8-Tm-No1"/>
-                            <constraint firstItem="RYL-oa-03x" firstAttribute="top" secondItem="6Tz-36-4Xj" secondAttribute="bottom" id="bUo-Bd-OVd"/>
+                            <constraint firstItem="tLq-er-1Vn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ns9-Xy-ayr"/>
+                            <constraint firstItem="tLq-er-1Vn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zlg-iy-tpt"/>
                             <constraint firstItem="RYL-oa-03x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="lG9-K4-sDW"/>
                             <constraint firstItem="RYL-oa-03x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nBF-O1-rWe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tLq-er-1Vn" secondAttribute="trailing" id="vLk-pq-Mxi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
