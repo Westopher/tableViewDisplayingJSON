@@ -16,13 +16,17 @@ class ViewController: UIViewController {
     }
 }
 
+var countries = ["USA", "Canada", "Norway", "South Africa", "Germany", "Austria"]
+
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return countries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! countryCell
+        cell.nameLabel?.text = countries[indexPath.row]
+        return cell
     }
     
     
