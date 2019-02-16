@@ -57,6 +57,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="FGd-ER-2IM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Y8D-4a-qI2"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TableView Displaying JSON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-er-1Vn">
@@ -83,7 +84,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AZv-88-JRN"/>
                     <connections>
-                        <segue destination="048-Uw-QI3" kind="show" id="ctc-yY-Uzo"/>
+                        <segue destination="048-Uw-QI3" kind="show" identifier="segue1" id="ctc-yY-Uzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

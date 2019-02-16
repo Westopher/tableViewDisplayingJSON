@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     }
 }
 
+
 var countries = ["USA", "Canada", "Norway", "South Africa", "Germany", "Austria"]
 
 extension ViewController: UITableViewDataSource {
@@ -28,6 +29,13 @@ extension ViewController: UITableViewDataSource {
         cell.nameLabel?.text = countries[indexPath.row]
         return cell
     }
-    
-    
 }
+    
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segue1", sender: nil)
+    }
+    }
+    
+    
+
