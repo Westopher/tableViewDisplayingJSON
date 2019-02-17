@@ -22,7 +22,7 @@ var countries = ["USA", "Canada", "Norway", "South Africa", "Germany", "Austria"
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,10 +35,10 @@ extension ViewController: UITableViewDataSource {
             guard let data = data else {return}
             
             do {
-                let darksky = try JSONDecoder().decode(DarkSky.self, from: data)
-                print(darksky.latitude)
+                let darksky = try JSONDecoder().decode(weatherJSON.self, from: data)
+                print(weatherJSON.CodingKeys.currently)
                 DispatchQueue.main.async {
-                    cell.nameLabel?.text = String(darksky.latitude)
+                    cell.nameLabel?.text = weatherJSON.CodingKeys.currently.stringValue
                     
                 }
             } catch let jsonErr {
