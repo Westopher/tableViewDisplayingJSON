@@ -116,8 +116,52 @@ struct Flag : Codable {
     
 }
 
+struct Hourly : Codable {
     
+    let data : [Data]?
+    let icon : String?
+    let summary : String?
+    
+    enum CodingKeys: String, CodingKey {
+        case data = "data"
+        case icon = "icon"
+        case summary = "summary"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        data = try values.decodeIfPresent([Data].self, forKey: .data)
+        icon = try values.decodeIfPresent(String.self, forKey: .icon)
+        summary = try values.decodeIfPresent(String.self, forKey: .summary)
+    }
+    
+}
 
+struct Minutely : Codable {
+    
+    let data : [Data]?
+    let icon : String?
+    let summary : String?
+    
+    enum CodingKeys: String, CodingKey {
+        case data = "data"
+        case icon = "icon"
+        case summary = "summary"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        data = try values.decodeIfPresent([Data].self, forKey: .data)
+        icon = try values.decodeIfPresent(String.self, forKey: .icon)
+        summary = try values.decodeIfPresent(String.self, forKey: .summary)
+    }
+    
+}
+
+
+
+
+//Root of JSON Data
 struct weatherJSON : Decodable {
     
     let alerts : [Alert]?
@@ -147,13 +191,13 @@ struct weatherJSON : Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         alerts = try values.decodeIfPresent([Alert].self, forKey: .alerts)
-        currently = Currently(from: decoder)
-        daily = Daily(from: decoder)
-        flags = Flag(from: decoder)
-        hourly = Hourly(from: decoder)
+        currently = try Currently(from: decoder)
+        daily = try Daily(from: decoder)
+        flags = try Flag(from: decoder)
+        hourly = try Hourly(from: decoder)
         latitude = try values.decodeIfPresent(Float.self, forKey: .latitude)
         longitude = try values.decodeIfPresent(Float.self, forKey: .longitude)
-        minutely = Minutely(from: decoder)
+        minutely = try Minutely(from: decoder)
         offset = try values.decodeIfPresent(Int.self, forKey: .offset)
         timezone = try values.decodeIfPresent(String.self, forKey: .timezone)
     }
