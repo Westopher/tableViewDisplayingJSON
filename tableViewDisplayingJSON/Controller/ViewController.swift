@@ -35,11 +35,10 @@ extension ViewController: UITableViewDataSource {
             guard let data = data else {return}
             
             do {
-                let darksky = try JSONDecoder().decode(weatherJSON.self, from: data)
-                print(weatherJSON.CodingKeys.currently)
+                let JSON = try JSONDecoder().decode(weatherJSON.self, from: data)
+                print(JSON.currently)
                 DispatchQueue.main.async {
-                    cell.nameLabel?.text = weatherJSON.CodingKeys.currently.stringValue
-                    
+                    cell.nameLabel?.text = JSON.alerts?.description
                 }
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
