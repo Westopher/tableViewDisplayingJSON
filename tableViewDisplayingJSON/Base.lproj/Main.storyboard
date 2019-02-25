@@ -74,6 +74,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AZv-88-JRN"/>
                     <connections>
+                        <outlet property="tableview" destination="RYL-oa-03x" id="eQk-1Y-ysU"/>
                         <segue destination="048-Uw-QI3" kind="show" identifier="segue1" id="ctc-yY-Uzo"/>
                     </connections>
                 </viewController>
