@@ -13,17 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     var weatherList: [weatherJSON] = []
     
-    //apikey
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let jsonUrlString = "https://api.darksky.net/forecast/59c6b6b7efd5c3fc0f617338cfae6c48/40.7127,-74.0059"
+    
+    func downloadJSON() {
+        let jsonUrlString = "https://api.darksky.net/forecast/59c6b6b7efd5c3fc0f617338cfae6c48/40.7309,-73.9872"
         guard let url = URL(string: jsonUrlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             guard let data = data else {return}
             
             do {
                 let JSON = try JSONDecoder().decode(weatherJSON.self, from: data)
-                print(JSON.alerts)
+                self.weatherList.append(JSON)
+                print(self.weatherList)
                 DispatchQueue.main.async {
                     self.tableview.reloadData()
                 }
@@ -33,6 +33,12 @@ class ViewController: UIViewController {
             
             }.resume()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        downloadJSON()
+        
+}
 }
 
 
@@ -45,7 +51,7 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! countryCell
         
         
-        //cell.nameLabel?.text = weatherList[indexPath.row]
+        cell.nameLabel?.text = String(weatherList[indexPath.row].currently!.cloudCover!)
         
         
         return cell
