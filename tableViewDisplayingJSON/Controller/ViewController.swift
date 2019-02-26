@@ -51,7 +51,7 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! countryCell
         
         
-        cell.nameLabel?.text = String(weatherList[indexPath.row].currently!.cloudCover!)
+        cell.nameLabel?.text = "\(String(describing: weatherList[indexPath.row].latitude))"
         
         
         return cell
